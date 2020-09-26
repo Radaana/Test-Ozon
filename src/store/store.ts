@@ -1,10 +1,17 @@
 import { Mutation, State } from 'vuex-simple';
+
+interface Task {
+  date: Date;
+  text: string;
+  done: boolean;
+}
+
 export class TasksStore {
   @State()
   public selectedDate: Date;
-  public tasks: Array<any>;
+  public tasks: Array<Task>;
 
-  constructor(nb: number = 0) {
+  constructor() {
     this.tasks = [
       {
         date: new Date(),
@@ -17,7 +24,7 @@ export class TasksStore {
   }
 
   @Mutation()
-  public setTask(task:Object): void {
+  public setTask(task:Task): void {
     this.tasks.push(task)
   }
 
@@ -27,9 +34,9 @@ export class TasksStore {
   }
 
   @Mutation()
-  public markTask(date:Date): void {
+  public markTask(task:Task): void {
     this.tasks.map(todo => {
-      if (todo.date === date) {
+      if (todo.date === task.date && todo.text === task.text) {
         todo.done = true
       }
     })
@@ -47,7 +54,7 @@ export class TasksStore {
     this.setDate(date)
   }
 
-  public getTasksForSelectedDate(): Array<any> {
+  public getTasksForSelectedDate(): Array<Task> {
     return this.tasks.filter(todo => todo.date.getDate() === this.selectedDate.getDate());
   }
 
@@ -56,7 +63,7 @@ export class TasksStore {
     return tasksForDate.length > 0
   }
 
-  public markTaskChecked(date: Date): void {
-    this.markTask(date)
+  public markTaskChecked(task:Task): void {
+    this.markTask(task)
   }
 }

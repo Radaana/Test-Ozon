@@ -1,0 +1,63 @@
+.dashboard {
+  padding: 25px 27px;
+  background: #FFFFFF;
+  box-shadow: 0px 2px 23px #EDEDED;
+  border-radius: 6px;
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+.header {
+  padding-bottom: 17px;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 0.59375px;
+  text-align: left;
+  color: #6B7897;
+}
+
+.form {
+  text-align: left;
+  padding-left: 35px;
+}
+
+.input {
+  background: #FFFFFF;
+  border: 1px solid #D8DCE6;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 7px 0 6px 14px;
+}
+
+.input::-webkit-input-placeholder {color:#BFC4CC;}
+.input::-moz-placeholder          {color:#BFC4CC;}/* Firefox 19+ */
+.input:-moz-placeholder           {color:#BFC4CC;}/* Firefox 18- */
+.input:-ms-input-placeholder      {color:#BFC4CC;}
+
+.task {
+  display: flex;
+  margin-bottom: 14px;
+}
+
+.label {
+  display: flex;
+  align-items: flex-end;
+}
+
+.checkmark {
+  margin-right: 19px;
+}
+
+.text {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 0.59375px;
+  color: #A2ABBF;
+}

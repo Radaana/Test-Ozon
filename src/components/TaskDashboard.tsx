@@ -10,7 +10,6 @@ interface Task {
   done: boolean;
 }
 
-
 @Component
 export default class TaskDashboard extends Vue {
   public store: TasksStore = useStore(this.$store)
@@ -59,7 +58,6 @@ export default class TaskDashboard extends Vue {
                   <span class={styles.text}>{ task }</span>
                 </label>
               </form>
-              
             </div>
           )}
         </div>
